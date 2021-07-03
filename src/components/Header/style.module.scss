@@ -1,0 +1,90 @@
+@import "../../ui/mixins";
+@import "../../ui/variables";
+
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 3;
+    padding: 10px 0;
+    height: 70px;
+    border-bottom: 1px solid #ececec;
+    background-color: #fff5f6;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+        cursor: pointer;
+    }
+
+    &__img {
+        margin-right: 12px;
+        width: 54px;
+        height: 54px;
+
+        @include r($sm) {
+            margin-right: 4px;
+            width: 44px;
+            height: 44px;
+        }
+    }
+
+    &__title {
+        @include r($md) {
+            max-width: 75px;
+            font-size: 18px;
+        }
+
+        @include r($sm) {
+            font-size: 16px;
+        }
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+
+        &__list {
+            display: flex;
+            align-items: center;
+        }
+
+        &__list-item {
+            &:not(:last-child) {
+                margin-right: 70px;
+            }
+
+            @include r($md) {
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+            }
+
+            @include r($sm) {
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        &__btn {
+            border: none;
+            border-bottom: 1px solid transparent;
+            font-weight: 500;
+            font-size: 18px;
+            background-color: transparent;
+            transition: border-bottom 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                border-bottom: 1px solid;
+            }
+
+            @include r($sm) {
+                font-size: 15px;
+            }
+        }
+    }
+}

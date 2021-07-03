@@ -1,0 +1,186 @@
+@import "../../ui/variables";
+@import "../../ui/mixins";
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    padding: 115px 0 0;
+
+    &__inner {
+        display: flex;
+    }
+
+    &__description {
+        margin-right: 35px;
+        width: 100%;
+        max-width: 600px;
+
+        @include r($md) {
+            margin-right: 0;
+        }
+
+        @include r($md) {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 35px;
+        font-size: 36px;
+        color: #0a0103;
+        animation-name: title;
+        animation-duration: 2s;
+
+        span {
+            color: rgb(186, 69, 100);
+        }
+
+        @include r($md) {
+            font-size: 30px;
+        }
+
+        @include r($sm) {
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 40px;
+        font-size: 22px;
+        color: #0a0103;
+
+        @include r($sm) {
+            margin-bottom: 32px;
+            font-size: 18px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        margin-bottom: 40px;
+
+        @include r($sm) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__list-item {
+        max-width: 300px;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+
+    &__list-img {
+        margin-bottom: 10px;
+        width: 55px;
+        height: 55px;
+    }
+
+    &__list-text {
+        @include r($sm) {
+            font-size: 14px;
+        }
+    }
+
+    &__btn {
+        padding: 20px 50px;
+        width: 100%;
+        max-width: 350px;
+        border: none;
+        border-radius: 30px;
+        box-shadow: 0 10px 25px 0 rgb(216, 124, 152);
+        color: #fff;
+        background-image: linear-gradient(120deg, #ba4564 40%, #7a2041);
+        background-color: rgb(122, 32, 65);
+        transition: box-shadow 0.5s;
+
+        &:hover {
+            box-shadow: none;
+        }
+
+        @include r($sm) {
+            padding: 15px 10px;
+            max-width: 300px;
+        }
+
+        @include r($sm) {
+            padding: 12px 6px;
+            max-width: 285px;
+        }
+    }
+
+    &__pic {
+        width: 100%;
+        max-width: 545px;
+        max-height: 490px;
+        border-radius: 0 5px 5px;
+
+        @include r($md) {
+            display: none;
+        }
+    }
+
+    &__image {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -50px;
+            top: -50px;
+            z-index: -1;
+            width: 300px;
+            height: 300px;
+            background-image: url("../../images/decor.svg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation-name: pic;
+            animation-duration: 2s;
+
+            @include r($md) {
+                display: none;
+            }
+        }
+    }
+
+    @include r($sm) {
+        padding: 45px 0;
+    }
+
+    @keyframes title {
+        0% {
+            transform: translateY(-200%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pic {
+        0% {
+            transform: translate(55px, 55px);
+        }
+
+        100% {
+            transform: translate(0);
+        }
+    }
+}
+
+.arrow {
+    position: fixed;
+    right: 35px;
+    bottom: 35px;
+    z-index: 9;
+    width: 45px;
+    height: 45px;
+    background-image: url("../../images/up-arrow.svg");
+    cursor: pointer;
+}

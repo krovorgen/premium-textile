@@ -1,0 +1,62 @@
+@import "../../ui/mixins";
+@import "../../ui/variables";
+
+.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    bottom: 0;
+    z-index: 99999;
+    opacity: 1;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-50%);
+    transition-property: opacity;
+    transition-duration: 500ms;
+    overscroll-behavior: none;
+
+    &__content {
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        min-height: 100%;
+    }
+
+    &__box {
+        position: relative;
+        display: flex;
+        margin: 25px auto;
+        padding: 32px;
+        width: 100%;
+        max-width: 1200px;
+        border-radius: 15px;
+        box-shadow: 0 2px 7px rgba(34, 34, 34, 0.5);
+        background-color: rgba(#fff5f6, 0.6);
+
+        &--sm {
+            padding: 45px 15px 15px;
+            max-width: 550px;
+        }
+
+        @include r($md) {
+            flex-direction: column;
+            max-width: 500px;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 25px;
+        height: 25px;
+        border: none;
+        background-image: url("../../images/close.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: transparent;
+    }
+}
