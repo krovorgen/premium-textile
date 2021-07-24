@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, memo, useState } from 'react';
 
 import mockData, { CategoryType, getSvg } from '../../mockDataProduct';
 import Modal from '../Modal';
@@ -206,4 +206,4 @@ const Products: FC = () => {
   );
 };
 
-export default Products;
+export default memo(Products);

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
 import styles from './style.module.scss';
 
@@ -58,4 +58,4 @@ const About: FC = () => {
   );
 };
 
-export default About;
+export default memo(About);

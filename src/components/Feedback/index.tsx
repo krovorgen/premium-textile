@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, { FC, memo } from 'react';
 import {v1} from 'uuid';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, Pagination, Navigation} from 'swiper/core';
@@ -59,4 +59,4 @@ const Feedback: FC = () => {
   );
 };
 
-export default Feedback;
+export default memo(Feedback);
