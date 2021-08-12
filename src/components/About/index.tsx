@@ -33,23 +33,23 @@ const About: FC = () => {
           <ul className={styles['about__items']}>
             <li className={`${styles['about__item']} ${styles['about__item--box']}`}>
               <p className={styles['about__text']}>
-                -Товар полностью соотвествуют описанию и фото на сайте
+                Товар полностью соотвествуют описанию и фото на сайте
               </p>
             </li>
             <li className={`${styles['about__item']} ${styles['about__item--no']}`}>
               <p className={styles['about__text']}>
-                -Мы не берем с вас предоплату, оплачиваете товар только на отделении почтового
+                Мы не берем с вас предоплату, оплачиваете товар только на отделении почтового
                 отделения
               </p>
             </li>
             <li className={`${styles['about__item']} ${styles['about__item--check']}`}>
               <p className={styles['about__text']}>
-                -Перед отправкой товар проходит 100% проверку. Мы вернем вам деньги если что-то с
+                Перед отправкой товар проходит 100% проверку. Мы вернем вам деньги если что-то с
                 вашим заказом будет не так.
               </p>
             </li>
             <li className={`${styles['about__item']} ${styles['about__item--return']}`}>
-              <p className={styles['about__text']}>-Обмен/Возврат товара до 14 дней</p>
+              <p className={styles['about__text']}>Обмен/Возврат товара до 14 дней</p>
             </li>
           </ul>
         </div>

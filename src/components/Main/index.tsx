@@ -72,7 +72,7 @@ const Main: FC = () => {
               </h1>
 
               <p className={styles['main__subtitle']}>
-                Бесплатная доставка при заказе от 4-ех единиц товаров!
+                «Бесплатная доставка на все товары! Оставь Заявку и менеджер свяжится с вами в течении 10 минут
               </p>
               <div className={styles['main__decor']}>
                 <ul className={styles['main__list']}>
@@ -82,12 +82,12 @@ const Main: FC = () => {
                   </li>
                   <li className={styles['main__list-item']}>
                     <img className={styles['main__list-img']} src={change} alt="картинка обмен" />
-                    <p className={styles['main__list-text']}>Возврат или обмен в течение 14 дней</p>
+                    <p className={styles['main__list-text']}>Возврат или Обмен в течении 14 дней</p>
                   </li>
                   <li className={styles['main__list-item']}>
                     <img className={styles['main__list-img']} src={gift} alt="картинка подарок" />
                     <p className={styles['main__list-text']}>
-                      При покупке постельного + полотенца, вы получаете 10% скидки на следующий
+                      При покупке товаров на сумму больше 1000 грн. – вы получаете 100 грн. скидки на ваш следующий
                       заказ
                     </p>
                   </li>

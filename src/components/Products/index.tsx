@@ -132,9 +132,7 @@ const Products: FC = () => {
                         }>
                         Подробнее
                       </button>
-                      <button
-                        className={'card__btn-buy'}
-                        onClick={() => infoProductForm(item.title, item.category)}>
+                      <button className={'card__btn-buy'} onClick={() => infoProductForm(item.title, item.category)}>
                         Купить
                       </button>
                     </div>
@@ -195,11 +193,7 @@ const Products: FC = () => {
       )}
       {openPayModal && (
         <Modal callBack={closeModal} small>
-          <ModalBuy
-            greetingUser={greetingUser}
-            closeModal={closeModal}
-            modalCategory={modalCategory}
-          />
+          <ModalBuy greetingUser={greetingUser} closeModal={closeModal} modalCategory={modalCategory} />
         </Modal>
       )}
     </>
