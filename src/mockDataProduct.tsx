@@ -359,7 +359,7 @@ let mockDataProduct: MockDataProductType[] = [
       { id: v1(), descr: 'Евро', count: 980 },
       { id: v1(), descr: 'Семейный ', count: 1000 },
     ],
-    description: <p>Хлопок, полиэстер</p>,
+    description: <p>Хлопок</p>,
     price: 450,
     sale: false,
   },

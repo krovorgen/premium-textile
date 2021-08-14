@@ -72,7 +72,8 @@ const Main: FC = () => {
               </h1>
 
               <p className={styles['main__subtitle']}>
-                «Бесплатная доставка на все товары! Оставь Заявку и менеджер свяжится с вами в течении 10 минут
+                <span>Бесплатная доставка на все товары!</span> Оставь Заявку и менеджер свяжится с вами в течении 10
+                минут
               </p>
               <div className={styles['main__decor']}>
                 <ul className={styles['main__list']}>

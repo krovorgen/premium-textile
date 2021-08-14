@@ -49,7 +49,7 @@ const Products: FC = () => {
     id: string,
   ) => {
     setModalContent({ img, title, price, size, sale, category, id });
-    setModalPrice(sale ? price * 0.75 : price);
+    setModalPrice(category[0].count);
   };
 
   const modalInModal = (title: string, category: CategoryType[]) => {
@@ -162,7 +162,6 @@ const Products: FC = () => {
                 </button>
               );
             })}
-
             {modalContent.sale && (
               <Player
                 autoplay

@@ -49,8 +49,13 @@
 
     &__subtitle {
         margin-bottom: 40px;
+        max-width: 505px;
         font-size: 22px;
         color: #0a0103;
+
+        span {
+            font-weight: 700;
+        }
 
         @include r($sm) {
             margin-bottom: 32px;
