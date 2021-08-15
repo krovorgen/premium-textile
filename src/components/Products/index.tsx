@@ -88,19 +88,19 @@ const Products: FC = () => {
             <li className={styles['products__list-item']}>
               <button
                 className={`${styles['products__list-button']} ${
-                  filter === 'towel' ? styles['products__list-button--active'] : ''
+                  filter === 'linens' ? styles['products__list-button--active'] : ''
                 }`}
-                onClick={() => setFilter('towel')}>
-                Полотенца
+                onClick={() => setFilter('linens')}>
+                Постельное белье
               </button>
             </li>
             <li className={styles['products__list-item']}>
               <button
                 className={`${styles['products__list-button']} ${
-                  filter === 'linens' ? styles['products__list-button--active'] : ''
+                  filter === 'towel' ? styles['products__list-button--active'] : ''
                 }`}
-                onClick={() => setFilter('linens')}>
-                Постельное белье
+                onClick={() => setFilter('towel')}>
+                Полотенца
               </button>
             </li>
           </ul>
