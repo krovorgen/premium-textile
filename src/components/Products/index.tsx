@@ -19,20 +19,19 @@ type ModalContentType = {
 
 const Products: FC = () => {
   let [modalContent, setModalContent] = useState<ModalContentType | null>(null);
-  let [productList, setProductList] = useState(mockData);
   let [filter, setFilter] = useState<'all' | 'towel' | 'linens'>('all');
   let [openPayModal, setOpenPayModal] = useState<boolean>(false);
   let [greetingUser, setGreetingUser] = useState('Здравствуйте! Хотел бы заказать ');
   let [modalPrice, setModalPrice] = useState<number>(0);
   let [modalCategory, setModalCategory] = useState<CategoryType[]>([]);
 
-  let copyProductList = productList;
+  let copyProductList = mockData;
 
   if (filter === 'towel') {
-    copyProductList = productList.filter((item) => item.type === 'towel');
+    copyProductList = mockData.filter((item) => item.type === 'towel');
   }
   if (filter === 'linens') {
-    copyProductList = productList.filter((item) => item.type === 'linens');
+    copyProductList = mockData.filter((item) => item.type === 'linens');
   }
 
   const modalPriceHandler = (money: number) => {
