@@ -1,5 +1,6 @@
 import { v1 } from 'uuid';
 import React from 'react';
+
 export const getImgUrl = (jpg: string) => require(`./images/${jpg}`);
 
 export const getSvg = (jpg: string) => {

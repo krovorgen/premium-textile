@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react';
-import {v1} from 'uuid';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, {Autoplay, Pagination, Navigation} from 'swiper/core';
+import { v1 } from 'uuid';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper/core';
 
 import sliderMockData from './sliderMockData';
 
@@ -44,9 +44,7 @@ const Feedback: FC = () => {
                       src={`${process.env.PUBLIC_URL}../assets/images/${slide.img}`}
                       alt="аватар"
                     />
-                    <div className={styles['feedback__card-name']}>
-                      {slide.name}
-                    </div>
+                    <div className={styles['feedback__card-name']}>{slide.name}</div>
                   </div>
                   <p className={styles['feedback__card-text']}>{slide.text}</p>
                 </div>
