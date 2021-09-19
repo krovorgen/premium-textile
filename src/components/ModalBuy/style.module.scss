@@ -40,6 +40,12 @@
                 color: #7a2041;
             }
         }
+
+        &--error {
+            input {
+                border: 2px solid #f00;
+            }
+        }
     }
 
     &__text {

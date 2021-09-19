@@ -111,7 +111,7 @@ const Products: FC = () => {
           <h2 className={'title'}>Каталог</h2>
           <ul className={styles['products__list']}>
             {navigationCatalog.map((item, index) => (
-              <li className={styles['products__list-item']}>
+              <li className={styles['products__list-item']} key={index}>
                 <button
                   className={`${styles['products__list-button']} ${
                     filter === item.filter ? styles['products__list-button--active'] : ''

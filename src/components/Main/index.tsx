@@ -8,13 +8,12 @@ import ModalBuy from '../ModalBuy';
 import About from '../About';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
-
-import styles from './style.module.scss';
-
 import topImg from '../../images/top-img.jpg';
 import cotton from '../../images/cotton.svg';
 import change from '../../images/change.svg';
 import gift from '../../images/gift.svg';
+
+import styles from './style.module.scss';
 
 const Main: FC = () => {
   let [openPayModal, setOpenPayModal] = useState<boolean>(false);
