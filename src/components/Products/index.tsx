@@ -3,9 +3,9 @@ import React, { FC, memo, useState } from 'react';
 import mockData, { CategoryType, getSvg } from '../../mockDataProduct';
 import Modal from '../Modal';
 import ModalBuy from '../ModalBuy';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 import styles from './style.module.scss';
-import { Player } from '@lottiefiles/react-lottie-player';
 
 type ModalContentType = {
   img: string;
@@ -17,9 +17,16 @@ type ModalContentType = {
   id: string;
 };
 
+type FilterType = 'all' | 'towel' | 'linens' | 'discount' | 'satin';
+
+type NavigationCatalogType = {
+  filter: FilterType;
+  text: string;
+};
+
 const Products: FC = () => {
   let [modalContent, setModalContent] = useState<ModalContentType | null>(null);
-  let [filter, setFilter] = useState<'all' | 'towel' | 'linens'>('all');
+  let [filter, setFilter] = useState<FilterType>('all');
   let [openPayModal, setOpenPayModal] = useState<boolean>(false);
   let [greetingUser, setGreetingUser] = useState('Здравствуйте! Хотел бы заказать ');
   let [modalPrice, setModalPrice] = useState<number>(0);
@@ -33,6 +40,35 @@ const Products: FC = () => {
   if (filter === 'linens') {
     copyProductList = mockData.filter((item) => item.type === 'linens');
   }
+  if (filter === 'discount') {
+    copyProductList = mockData.filter((item) => item.sale);
+  }
+  if (filter === 'satin') {
+    copyProductList = mockData.filter((item) => item.price === 1200);
+  }
+
+  const navigationCatalog: NavigationCatalogType[] = [
+    {
+      filter: 'all',
+      text: 'Все товары',
+    },
+    {
+      filter: 'linens',
+      text: 'Постельное белье',
+    },
+    {
+      filter: 'towel',
+      text: 'Полотенца',
+    },
+    {
+      filter: 'discount',
+      text: 'На скидке',
+    },
+    {
+      filter: 'satin',
+      text: 'Постельное бельё из сатина',
+    },
+  ];
 
   const modalPriceHandler = (money: number) => {
     setModalPrice(money);
@@ -73,35 +109,18 @@ const Products: FC = () => {
       <section className={styles['products']} id={'products'}>
         <div className={'container'}>
           <h2 className={'title'}>Каталог</h2>
-
           <ul className={styles['products__list']}>
-            <li className={styles['products__list-item']}>
-              <button
-                className={`${styles['products__list-button']} ${
-                  filter === 'all' ? styles['products__list-button--active'] : ''
-                }`}
-                onClick={() => setFilter('all')}>
-                Все товары
-              </button>
-            </li>
-            <li className={styles['products__list-item']}>
-              <button
-                className={`${styles['products__list-button']} ${
-                  filter === 'linens' ? styles['products__list-button--active'] : ''
-                }`}
-                onClick={() => setFilter('linens')}>
-                Постельное белье
-              </button>
-            </li>
-            <li className={styles['products__list-item']}>
-              <button
-                className={`${styles['products__list-button']} ${
-                  filter === 'towel' ? styles['products__list-button--active'] : ''
-                }`}
-                onClick={() => setFilter('towel')}>
-                Полотенца
-              </button>
-            </li>
+            {navigationCatalog.map((item, index) => (
+              <li className={styles['products__list-item']}>
+                <button
+                  className={`${styles['products__list-button']} ${
+                    filter === item.filter ? styles['products__list-button--active'] : ''
+                  }`}
+                  onClick={() => setFilter(item.filter)}>
+                  {item.text}
+                </button>
+              </li>
+            ))}
           </ul>
           <ul className={styles['products__items']}>
             {copyProductList.map((item) => {

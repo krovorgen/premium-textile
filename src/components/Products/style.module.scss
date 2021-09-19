@@ -9,7 +9,7 @@
         justify-content: center;
         margin-bottom: 20px;
 
-        @include r($sm) {
+        @include r($lg) {
             flex-wrap: wrap;
         }
     }
@@ -41,7 +41,7 @@
             background-color: #7a2041;
         }
 
-        @include r($sm) {
+        @include r($lg) {
             margin-bottom: 10px;
             padding: 6px 8px;
         }

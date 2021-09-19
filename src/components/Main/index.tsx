@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
+import { Link } from 'react-scroll';
 
 import Header from '../Header';
 import Products from '../Products';
@@ -7,8 +8,6 @@ import ModalBuy from '../ModalBuy';
 import About from '../About';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
-
-import { Link } from 'react-scroll';
 
 import styles from './style.module.scss';
 
