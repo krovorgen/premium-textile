@@ -17,6 +17,13 @@ import styles from './style.module.scss';
 
 const Main: FC = () => {
   let [openPayModal, setOpenPayModal] = useState<boolean>(false);
+  let firstVisit = localStorage.getItem('first-visit');
+  if (!firstVisit) {
+    setTimeout(() => {
+      setOpenPayModal(true);
+    }, 6000);
+    localStorage.setItem('first-visit', JSON.stringify('first-visit'));
+  }
 
   function getZero(num: number) {
     if (num >= 0 && num < 10) {
